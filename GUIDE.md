@@ -105,6 +105,20 @@ When approaching the cap, in order:
 | Claude Code | `~/.claude/CLAUDE.md` (global) | (context budget) |
 | OptMem | memory notes | (tree-based) |
 
+## Principles: what belongs here (Faris's judgement)
+
+A good `USER.md` is **minimal and taste-focused**. The maintainer's own profile follows these rules:
+
+- **Keep:** stable preferences and tastes — response style, timezone/working hours, language, commit-attribution preference, how to handle ambiguity between personal and work context, decision-making style (trade-offs over single answers), risk tolerance (reversible first), and "explain the why".
+- **Move to `AGENTS.md` (machine profile):** OS, shell, editor, machine-detection scripts, SSH/GitHub account mapping, "no `~/dev/personal` on this machine".
+- **Move to `AGENTS.md` / `MEMORY.md`:** project facts, durable decisions, conventions, deploy/CI details.
+- **Move to harness plugins or `AGENTS.md`:** infra guards — search-guard, no-heredocs, trash-vs-rm. These are enforcement concerns, not profile facts; a profile directive is a fallback only.
+- **Move to harness built-in system prompt:** "read local `AGENTS.md` first", harness-specific rules (Agensi MCP usage).
+- **Move to `MEMORY.md` / OptMem:** cross-session durable facts, OptMem usage discipline.
+- **Never:** secrets, tokens, passwords, API keys.
+
+Rationale: `USER.md` is loaded into the prompt every session with a tight budget. Filling it with infra rules crowds out the tastes that actually shape how the agent talks to you. Enforce rules in code (plugins) or project docs; reserve `USER.md` for who you are and how you like to be helped.
+
 ## Recommended cap
 
 ~1,000–1,375 chars (Hermes-style) to force discipline, since durable facts live in `MEMORY.md` / OptMem. Adjust to your harness.

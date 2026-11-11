@@ -1,5 +1,7 @@
 # WORKSHEET — Seed your USER.md in 5 minutes
 
+> **Principle (from the maintainer's own usage):** keep only stable preferences and *tastes* that improve assistance. Infra rules (search guards, heredocs, trash-vs-rm) belong in harness plugins or `AGENTS.md`; machine facts in the machine profile; project facts/durable decisions in `AGENTS.md`/`MEMORY.md`; secrets never. See `GUIDE.md` → "Principles".
+
 Answer the 5 questions below. Each answer becomes one or more directives in `USER.md`.
 
 ## 1. Who are you, in one line?
