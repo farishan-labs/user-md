@@ -17,4 +17,14 @@ Human-readable by default; `--json` for CI.
 
 ## Status
 
-Not yet implemented. Contributions welcome. Tracking: see the private ops repo (maintainer only).
+Implemented (v0.1.0). Build with `make build` (CGO disabled). Run `./bin/usermd-check --help`.
+
+## Build
+
+```sh
+cd checker
+make build      # -> bin/usermd-check
+make test
+```
+
+Cross-platform release binaries are produced by GoReleaser on tag push (see `.goreleaser.yaml` and `.github/workflows/release.yml`).

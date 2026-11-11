@@ -14,7 +14,7 @@ This repo gives you:
 - A `WORKSHEET.md` to seed your profile in 5 minutes.
 - Filled examples for OpenClaw, Hermes, Claude Code (global), and OptMem.
 
-A standalone validator CLI (`usermd-check`) is planned for v1.0 — see [`checker/README.md`](checker/README.md).
+A standalone validator CLI (`usermd-check`) is included — see [`checker/`](checker/). Build with `cd checker && make build`.
 
 ## Quick start
 
