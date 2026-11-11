@@ -1,5 +1,7 @@
 # user-md — Operator Profile Template for AI Agents
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A portable, harness-agnostic **USER.md** template + guide for teaching your AI agent who you are — your role, preferences, communication style, and constraints — so every session starts with that context loaded.
 
 > **File name stays `USER.md`** (that's what OpenClaw, Hermes, Claude Code, and OptMem look for). This repo brands the concept as an *operator profile* because "user" is ambiguous — but the file is `USER.md` for compatibility.
@@ -17,6 +19,14 @@ This repo gives you:
 A standalone validator CLI (`usermd-check`) is included — see [`checker/`](checker/). Build with `cd checker && make build`.
 
 ## Quick start
+
+Install the checker CLI:
+
+```sh
+go install github.com/farishan-labs/user-md/checker@latest
+```
+
+Or download a pre-built binary from the [releases page](https://github.com/farishan-labs/user-md/releases).
 
 1. Copy `USER.md` to your agent's workspace root (or `~/.hermes/memories/USER.md`, or `~/.claude/CLAUDE.md` global).
 2. Fill in `WORKSHEET.md` (5 questions) → paste the resulting directives into `USER.md`.

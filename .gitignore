@@ -13,3 +13,7 @@ checker/dist/
 *.exe
 # Build output
 bin/
+# Local secrets
+.env
+.env.*
+!.env.example
