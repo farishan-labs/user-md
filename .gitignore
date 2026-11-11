@@ -11,3 +11,5 @@ Thumbs.db
 checker/usermd-check
 checker/dist/
 *.exe
+# Build output
+bin/
