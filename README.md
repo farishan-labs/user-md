@@ -74,8 +74,15 @@ Works with any harness that loads a user-profile file or global instructions:
 
 MIT. See [LICENSE](LICENSE).
 
-## Related
+## Research backing (summary)
 
-- Research: [`farishan-labs/research` → `topics/ai-agent-recognition-of-human-operator`](https://github.com/farishan-labs/research/tree/main/topics/ai-agent-recognition-of-human-operator)
-- Deep dive: [`user-md-convention.md`](https://github.com/farishan-labs/research/blob/main/topics/ai-agent-recognition-of-human-operator/user-md-convention.md)
-- Companion template file: [`templates/USER.md`](https://github.com/farishan-labs/research/blob/main/topics/ai-agent-recognition-of-human-operator/templates/USER.md)
+This template comes from a survey of how AI agents recognize their human operator across OpenClaw, Hermes, Claude Code, Cursor, Aider, Codex, Continue, Cline, Roo, Windsurf, Goose, and memory frameworks (Letta, Mem0, Zep, Honcho).
+
+Key findings:
+
+- **Three separate problems:** identity (who is operating), personalization (preferences), authorization (what the agent may do). Most coding agents solve only ambient identity (OS user / git author) plus project instructions.
+- **Dominant transferable pattern:** the **SOUL.md vs USER.md split** — the agent's own persona (`SOUL.md`) is kept strictly separate from the human's profile (`USER.md`) and from project instructions (`AGENTS.md`). OpenClaw docs state they "never feed each other."
+- **Coding-agent convergence:** `AGENTS.md` is the cross-tool constitution, with tool-specific layers (`CLAUDE.md` global+project, `.cursor/rules/*.mdc`). Personal preference lives in global instructions, not in project files.
+- **Memory ≠ identity:** memory systems (Letta, Mem0, Zep, Honcho) recognize users via a stable `user_id` (usually from an auth provider) and retrieve scoped memories; they don't replace an identity file.
+- **Recommendation:** keep the role/identity separation, and add one small, portable operator profile file (this `USER.md`) consolidating rules scattered across `AGENTS.md` files, with OptMem as cross-harness memory.
+- **Security:** keep commit author (agent slot) distinct from push auth (human); never store secrets in identity files.
